@@ -2,14 +2,26 @@
 
 **言語：** [English](../README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md) | 日本語
 
-[![Version](https://img.shields.io/badge/version-v1.2.0-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
+[![Version](https://img.shields.io/badge/version-v1.2.1-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
 [![Skills](https://img.shields.io/badge/skills-14-green.svg)](../reference/skill.schema.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Skills-purple.svg)](https://cursor.com/docs/context/skills)
 
+**Cursor をスタートアップチームに。** プロンプトを投げるのではなく、AI の部署で計画・レビュー・出荷する。
+
+[Bubble Chicken Lab](https://github.com/louislibuilds) の **OPC Skill OS** は、[Cursor](https://cursor.com) 向けの一人会社フレームワーク。一文入力 → Ticket → Product / Engineering / Marketing の並列アドバイス → 今日実行できる **next action**。長文の羅列なし、次に何をするか迷わない。
+
+**インストールする理由：**
+
+- **プロンプト集ではなく AI 社員** — 14 ロール skill（PM、FE/BE、QA、セキュリティ、グロース、コンテンツ…）
+- **Ticket ファースト** — コード前にスコープと出荷パスを確定
+- **並列アドバイザリ** — `CRITICAL` のみブロック
+- **MVP デフォルト** — solo founder 向け（≤ 2 週間）
+- **一度インストールで全プロジェクト** — `@opc-os`
+
 ## 一人で8人チームのように — Solo Founder でも
 
-**OPC Skill OS** は [Cursor](https://cursor.com) を AI 共同創業者チームに変える。`@opc-os` + ゴールで、アイデアから MVP、ローンチまで。
+**アイデア → MVP → ローンチ。** `@opc-os` + ゴールを入力。
 
 ## クイックスタート
 
@@ -72,4 +84,4 @@ cd bubblechickenlab-opc-skills && ./install.sh
 
 ---
 
-Translation of README.md at v1.2.0
+Translation of README.md at v1.2.1

@@ -2,16 +2,26 @@
 
 **Languages:** English | [繁體中文](docs/README.zh-TW.md) | [简体中文](docs/README.zh-CN.md) | [日本語](docs/README.ja.md)
 
-[![Version](https://img.shields.io/badge/version-v1.2.0-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
+[![Version](https://img.shields.io/badge/version-v1.2.1-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Skills](https://img.shields.io/badge/skills-14-green.svg)](reference/skill.schema.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Skills-purple.svg)](https://cursor.com/docs/context/skills)
 
+**Turn Cursor into a startup team.** You're not dumping prompts into a chat box — you're running an AI company with departments that plan, review, and ship together.
+
+[Bubble Chicken Lab](https://github.com/louislibuilds)'s **OPC Skill OS** is a one-person company framework for [Cursor](https://cursor.com). One sentence in → a scoped Ticket out → parallel advice from Product, Engineering, and Marketing → a single **next action** you can execute today. No 2,000-word ramble. No guessing what to do next.
+
+**Why founders install it:**
+
+- **AI employees, not prompts** — 14 role-based skills (PM, frontend, backend, QA, security, growth, content, founder coach…)
+- **Ticket-first workflow** — every task gets scope, domains, and a ship path before code
+- **Parallel advisory** — departments review at once; only `CRITICAL` blocks you
+- **MVP by default** — scoped for solo builders (≤ 2 weeks), not enterprise theater
+- **Install once, use everywhere** — `@opc-os` in any project after `./install.sh`
+
 ## Build Products Like a Team of 8 — Even If You're Solo
 
-**OPC Skill OS** turns [Cursor](https://cursor.com) into your AI co-founder team — not another prompt collection.
-
-**From idea → MVP → launch.** Type `@opc-os` + your goal. One prompt becomes a Ticket, routes to the right skills, and ships with a clear next action.
+**From idea → MVP → launch.** Type `@opc-os` + your goal.
 
 ### Why not plain prompts?
 
@@ -128,4 +138,4 @@ Install flattens `skills/*` and `opc-os` into `~/.cursor/skills/opc-*` for globa
 
 ---
 
-Version v1.2.0
+Version v1.2.1

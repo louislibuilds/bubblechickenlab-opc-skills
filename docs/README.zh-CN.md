@@ -2,14 +2,26 @@
 
 **语言：** [English](../README.md) | [繁體中文](README.zh-TW.md) | 简体中文 | [日本語](README.ja.md)
 
-[![Version](https://img.shields.io/badge/version-v1.2.0-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
+[![Version](https://img.shields.io/badge/version-v1.2.1-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
 [![Skills](https://img.shields.io/badge/skills-14-green.svg)](../reference/skill.schema.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Skills-purple.svg)](https://cursor.com/docs/context/skills)
 
+**把 Cursor 变成你的创业团队。** 你不是在堆 prompt — 你是在用 AI 部门一起规划、审查、出货。
+
+[Bubble Chicken Lab](https://github.com/louislibuilds) 的 **OPC Skill OS** 是给一人公司用的 [Cursor](https://cursor.com) 框架。一句话进去 → 收敛好的 Ticket → Product / Engineering / Marketing 并行建议 → 今天就能做的 **next action**。没有两千字废话，不用猜下一步。
+
+**为什么值得安装：**
+
+- **AI 员工，不是 prompt 合集** — 14 个角色 skill（PM、前后端、QA、安全、增长、内容、创始人教练…）
+- **Ticket 优先** — 写 code 前先定范围、领域、出货路径
+- **并行顾问** — 多部门同时审查；只有 `CRITICAL` 会挡你
+- **默认 MVP** — 为 solo founder 设计（≤ 2 周），不是企业级空转
+- **装一次到处用** — `./install.sh` 后任何项目 `@opc-os`
+
 ## 一人当八人团队用 — 即使你是 Solo Founder
 
-**OPC Skill OS** 把 [Cursor](https://cursor.com) 变成你的 AI 联合创始人团队。输入 `@opc-os` + 目标，从点子到 MVP 到上线。
+**从点子 → MVP → 上线。** 输入 `@opc-os` + 你的目标。
 
 ## 快速开始
 
@@ -72,4 +84,4 @@ cd bubblechickenlab-opc-skills && ./install.sh
 
 ---
 
-Translation of README.md at v1.2.0
+Translation of README.md at v1.2.1

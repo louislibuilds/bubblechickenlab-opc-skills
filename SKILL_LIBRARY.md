@@ -11,6 +11,12 @@ Track new and reused skills per product initiative.
 - Notes: ...
 ```
 
+## 2026-07-13 — v1.2.1 README intro + external review
+
+- **Added:** README intro paragraph with selling points (en + zh-TW/zh-CN/ja)
+- **Added:** internal-docs/external-review-2026-07-13.md (full third-party review)
+- **Updated:** internal-docs/open-source-roadmap.md P0/P1/P2 priorities
+
 ## 2026-07-13 — v1.2.0 skills directory restructure
 
 - **Moved:** 13 domain skills into `skills/{leadership,engineering,marketing}/`
