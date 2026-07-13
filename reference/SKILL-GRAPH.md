@@ -2,6 +2,26 @@
 
 Domain trigger chains for the One-Person Company OS. Human-readable companion to `skill.schema.json`.
 
+## Visual Overview
+
+```mermaid
+graph TD
+    A[idea / MVP] --> PT[opc-product-thinking]
+    PT --> BE[opc-build-engine]
+    BE --> FE[opc-build-frontend]
+    BE --> API[opc-build-backend-api]
+    BE --> QA[opc-build-qa]
+    BE --> SEC[opc-build-security]
+    PT --> GR[opc-growth-engine]
+    GR --> UX[opc-ux-design]
+    GR --> CE[opc-content-engine]
+    GR --> AN[opc-analytics]
+    FO[opc-founder-os] --> PT
+    AU[opc-automation] --> BE
+```
+
+Routing details: [docs/routing.md](../docs/routing.md)
+
 ## Primary Chain (new product → ship)
 
 ```

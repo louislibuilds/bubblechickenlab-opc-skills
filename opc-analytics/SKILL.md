@@ -13,7 +13,7 @@ Data feedback loop for solo products. Light instrumentation, not a data team.
 
 ## When to Activate
 
-Triggers: analytics, PostHog, Plausible, funnel, retention, metrics, event, track, A/B, conversion rate.
+Triggers: analytics, PostHog, Plausible, funnel, retention, metrics, event, track, A/B, conversion rate, north star, AARRR, churn, KPI, MRR, activation.
 
 **Out of scope:** implementing tracking code at scale without Ticket (→ opc-build-frontend + opc-automation).
 
@@ -53,6 +53,26 @@ Landing → Primary CTA click → Core action complete → Return within 7d
 ```
 
 Define denominators. Ignore vanity metrics (raw pageviews without CTA click).
+
+## AARRR (solo lens)
+
+| Stage | Solo question | Example metric |
+|-------|---------------|----------------|
+| **Acquisition** | How do users find us? | Landing → signup rate |
+| **Activation** | First value moment? | `core_value_action` within 24h |
+| **Retention** | Do they return? | 7-day / 30-day return rate |
+| **Revenue** | Are they paying? | MRR, conversion to paid |
+| **Referral** | Do they invite others? | Referral link clicks (v2) |
+
+Pick **one north star** per product stage. Pre-PMF: optimize Activation + Retention, not Revenue.
+
+## KPI Review (lightweight)
+
+When user asks for metrics review:
+
+1. State north star metric + current value (or "not instrumented")
+2. Name biggest funnel drop-off step
+3. One suggested experiment (not a dashboard project)
 
 ## Checklist
 

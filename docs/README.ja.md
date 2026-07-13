@@ -2,85 +2,108 @@
 
 **言語：** [English](../README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md) | 日本語
 
-[![Version](https://img.shields.io/badge/version-v1.0.3-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
+[![Version](https://img.shields.io/badge/version-v1.1.0-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
 [![Skills](https://img.shields.io/badge/skills-14-green.svg)](../reference/skill.schema.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Skills-purple.svg)](https://cursor.com/docs/context/skills)
 
-[Cursor](https://cursor.com) 向けの一人会社（One-Person Company）AI オペレーティングシステム。
+## 一人で8人チームのように — Solo Founder でも
 
-すべてのプロンプトを **Ticket** に変換し、**8 つの Skill ドメイン**へルーティング。**並列アドバイザリ**でレビューしつつ実行を止めず、MVP ファーストで出荷する。
+**OPC Skill OS** は [Cursor](https://cursor.com) を AI 共同創業者チームに変える — 単なるプロンプト集ではありません。
+
+| 役割 | Skill |
+|------|-------|
+| プロダクトマネージャー | `opc-product-thinking` |
+| フロントエンド | `opc-build-frontend` |
+| バックエンド | `opc-build-backend-api` |
+| QA | `opc-build-qa` |
+| セキュリティ | `opc-build-security` |
+| グロース | `opc-growth-engine` |
+| コンテンツ | `opc-content-engine` |
+| ファウンダーコーチ | `opc-founder-os` |
+
+**アイデア → MVP → ローンチ。** 1つのプロンプトが Ticket になり、ドメインにルーティングされ、次のアクションが出力されます。
+
+### 普通のプロンプトとの違い
+
+| | プロンプト集 | Cursor Rules | MCP | **OPC Skill OS** |
+|---|:---:|:---:|:---:|:---:|
+| 再利用可能 | ✅ | ✅ | ❌ | ✅ |
+| AI チーム役割 | ❌ | ❌ | ❌ | ✅ |
+| ワークフロー routing | ❌ | ❌ | ✅ | ✅ |
+| Ticket + PLAN MODE | ❌ | ❌ | ❌ | ✅ |
+| 並列アドバイザリ | ❌ | ❌ | ❌ | ✅ |
 
 ## クイックスタート
 
 ```bash
-# 1. グローバルインストール
-./install.sh          # macOS / Linux
-.\install.ps1         # Windows
+git clone https://github.com/louislibuilds/bubblechickenlab-opc-skills.git
+cd bubblechickenlab-opc-skills && ./install.sh
+
+# ワンライナー（macOS / Linux）
+curl -fsSL https://raw.githubusercontent.com/louislibuilds/bubblechickenlab-opc-skills/main/install.sh | bash
 ```
 
 ```
-# 2. Cursor で任意のプロジェクトを開き：
-@opc-os My SaaS landing page needs SEO meta tags. Ship this week.
+# Cursor で任意のプロジェクトを開き：
+@opc-os Build a job tracker for international students. MVP in 2 weeks.
 ```
 
-これだけです——`@opc-os` が PLAN MODE を実行し、ドメインをルーティングして次のアクションを出力します。
+## 仕組み
 
-## ディレクトリマップ
-
-| Skill | Domain | Dept tag | 役割 |
-|-------|--------|----------|------|
-| [opc-os](../opc-os/SKILL.md) | meta | leadership | オーケストレーター、PLAN MODE、Ticket ルーティング |
-| [opc-product-thinking](../opc-product-thinking/SKILL.md) | 1 | leadership | MVP、価格設定、検証 |
-| [opc-build-engine](../opc-build-engine/SKILL.md) | 2 | engineering | エンジニアリングバス |
-| [opc-build-frontend](../opc-build-frontend/SKILL.md) | 2 | engineering | UI、コンポーネント、a11y |
-| [opc-build-backend-api](../opc-build-backend-api/SKILL.md) | 2 | engineering | API、DB、認証 |
-| [opc-build-qa](../opc-build-qa/SKILL.md) | 2 | engineering | テスト、受け入れ |
-| [opc-build-security](../opc-build-security/SKILL.md) | 2 | engineering | OWASP クイックゲート |
-| [opc-growth-engine](../opc-growth-engine/SKILL.md) | 3 | marketing | SEO、コンバージョン、獲得 |
-| [opc-ux-design](../opc-ux-design/SKILL.md) | 4 | marketing | UX フロー、デザインシステム |
-| [opc-analytics](../opc-analytics/SKILL.md) | 5 | leadership | イベント、ファネル、A/B |
-| [opc-automation](../opc-automation/SKILL.md) | 6 | engineering | ワークフロー、エージェント、cron |
-| [opc-content-engine](../opc-content-engine/SKILL.md) | 7 | marketing | Build-in-public、ソーシャル |
-| [opc-founder-os](../opc-founder-os/SKILL.md) | 8 | leadership | 週次計画、フォーカス |
-
-## リファレンス
-
-- [SKILL-GRAPH.md](../reference/SKILL-GRAPH.md) — ドメイントリガーチェーン
-- [parallel-review-protocol.md](../reference/parallel-review-protocol.md) — 非ブロッキング協業ルール
-- [skill.schema.json](../reference/skill.schema.json) — skill メタデータ schema
-- [examples/TICKET-EXAMPLE.md](../examples/TICKET-EXAMPLE.md) — 汎用 Ticket ウォークスルー
-
-## インストール（グローバル）
-
-各 `opc-*` skill フォルダを `~/.cursor/skills/` にコピー：
-
-```bash
-./install.sh
+```mermaid
+graph TD
+    A[User Prompt] --> B[@opc-os]
+    B --> C[PLAN MODE]
+    C --> D[Ticket]
+    D --> E[Skill Router]
+    E --> F1[Product]
+    E --> F2[Frontend]
+    E --> F3[Backend]
+    E --> F4[QA]
+    E --> F5[Security]
+    E --> F6[Growth]
+    E --> F7[Content]
+    E --> F8[Founder]
+    F1 & F2 & F3 & F4 & F5 & F6 & F7 & F8 --> G[Parallel Advisory]
+    G --> H[Decision + Next Action]
 ```
 
-```powershell
-.\install.ps1
-```
+詳細：[docs/architecture.md](architecture.md)
 
-どちらのスクリプトも再実行可能（既存の `opc-*` skills を上書き）。
+## デモ（テキスト）
 
-## プロダクトデフォルト
+**入力：** `@opc-os Build a job tracker for international students.`
 
-| シナリオ | デフォルトドメイン |
-|----------|-------------------|
-| 新規 Web app / SaaS | `opc-build-*` + `opc-ux-design` + `opc-growth-engine` |
-| コンテンツ / ソーシャル | `opc-content-engine` + `opc-growth-engine` |
-| 新規プロダクトアイデア | `opc-os` 経由でフルチェーン |
+**出力（要約）：** Ticket → 並列アドバイザリ → Decision
 
-プロジェクト固有のブランドトークンは、独自の `BRAND.md` / `DESIGN-TOKENS.md` を参照するか、ワークスペースにローカル preset オーバーレイを作成してください（この repo には含まれません）。
+完全な例：[examples/TICKET-EXAMPLE.md](../examples/TICKET-EXAMPLE.md)
 
-## 設計原則
+## ユースケース
 
-- **部門よりドメイン** — engineering / marketing はタグであり、組織階層ではない。
-- **アドバイザリでブロックしない** — `CRITICAL` 深刻度のみ出荷を止める。
-- **ソロ実行** — デフォルト MVP スコープ ≤ 2 週間。
-- **段階的開示** — サブ skill は `disable-model-invocation: true`；`@opc-os` または明示的 `@` で読み込む。
+| 対象 | OPC の役割 |
+|------|-----------|
+| **Indie hacker** | MVP スコープ、垂直スライス出荷 |
+| **起業家** | 1 プロンプト → プロダクト + グロース + コンテンツ |
+| **学生** | 課題をポートフォリオに |
+| **エージェンシー** | 反復可能な Cursor ワークフロー |
+| **PM** | PRD-lite、チームなしの横断レビュー |
+
+## ドキュメント
+
+| ドキュメント | 説明 |
+|-------------|------|
+| [architecture.md](architecture.md) | アーキテクチャ |
+| [routing.md](routing.md) | ルーティング |
+| [create-skill.md](create-skill.md) | Skill 作成 |
+| [compatibility.md](compatibility.md) | 互換性 |
+| [CONTRIBUTING.md](../CONTRIBUTING.md) | 貢献ガイド |
+
+## 互換性
+
+Cursor v0.40+ · macOS / Linux · Windows
+
+[compatibility.md](compatibility.md) を参照
 
 ## ライセンス
 
@@ -88,4 +111,4 @@
 
 ---
 
-Translation of README.md at v1.0.3
+Translation of README.md at v1.1.0

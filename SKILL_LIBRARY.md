@@ -11,6 +11,13 @@ Track new and reused skills per product initiative.
 - Notes: ...
 ```
 
+## 2026-07-13 — v1.1.0 open-source readiness
+
+- **Added:** README hero, mermaid diagrams, demo, use cases, comparison table
+- **Added:** CONTRIBUTING.md, docs/architecture|routing|create-skill|compatibility.md
+- **Updated:** opc-analytics (AARRR, KPI review), SKILL-GRAPH mermaid
+- **Notes:** GIF demo and new skills (devops/finance/hiring) deferred to Phase 3
+
 ## 2026-07-13 — v1.0.3 remove public presets
 
 - **Removed:** `presets/jobseek/` and `examples/TICKET-EXAMPLE-jobseek.md` from repo (gitignored locally)

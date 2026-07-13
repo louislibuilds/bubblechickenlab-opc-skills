@@ -2,85 +2,108 @@
 
 **語言：** [English](../README.md) | 繁體中文 | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
-[![Version](https://img.shields.io/badge/version-v1.0.3-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
+[![Version](https://img.shields.io/badge/version-v1.1.0-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
 [![Skills](https://img.shields.io/badge/skills-14-green.svg)](../reference/skill.schema.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Skills-purple.svg)](https://cursor.com/docs/context/skills)
 
-一人公司（One-Person Company）的 [Cursor](https://cursor.com) AI 作業系統。
+## 一人當八人團隊用 — 即使你是 Solo Founder
 
-將每個提示轉成 **Ticket**，路由至 **8 個 Skill 領域**，以**平行顧問**方式審查且不阻擋執行，以 MVP 優先出貨。
+**OPC Skill OS** 把 [Cursor](https://cursor.com) 變成你的 AI 共同創辦人團隊 — 不是又一個 prompt 合集。
+
+| 角色 | Skill |
+|------|-------|
+| 產品經理 | `opc-product-thinking` |
+| 前端工程師 | `opc-build-frontend` |
+| 後端工程師 | `opc-build-backend-api` |
+| QA 工程師 | `opc-build-qa` |
+| 資安審查 | `opc-build-security` |
+| 成長行銷 | `opc-growth-engine` |
+| 內容策略 | `opc-content-engine` |
+| 創辦人教練 | `opc-founder-os` |
+
+**從點子 → MVP → 上線。** 一個提示變成 Ticket，路由到對的領域，產出明確的下一步。
+
+### 跟普通 prompt 有什麼不同？
+
+| | Prompt 庫 | Cursor Rules | MCP | **OPC Skill OS** |
+|---|:---:|:---:|:---:|:---:|
+| 可重用提示 | ✅ | ✅ | ❌ | ✅ |
+| AI 團隊角色 | ❌ | ❌ | ❌ | ✅ |
+| 工作流路由 | ❌ | ❌ | ✅ | ✅ |
+| Ticket + PLAN MODE | ❌ | ❌ | ❌ | ✅ |
+| 平行顧問審查 | ❌ | ❌ | ❌ | ✅ |
 
 ## 快速開始
 
 ```bash
-# 1. 全域安裝
-./install.sh          # macOS / Linux
-.\install.ps1         # Windows
+git clone https://github.com/louislibuilds/bubblechickenlab-opc-skills.git
+cd bubblechickenlab-opc-skills && ./install.sh
+
+# 或一行安裝（macOS / Linux）
+curl -fsSL https://raw.githubusercontent.com/louislibuilds/bubblechickenlab-opc-skills/main/install.sh | bash
 ```
 
 ```
-# 2. 在 Cursor 開啟任一專案，然後：
-@opc-os My SaaS landing page needs SEO meta tags. Ship this week.
+# 在 Cursor 開啟任一專案：
+@opc-os Build a job tracker for international students. MVP in 2 weeks.
 ```
 
-就這樣——`@opc-os` 會執行 PLAN MODE、路由各領域，並輸出你的下一步。
+## 運作方式
 
-## 目錄對照
-
-| Skill | Domain | Dept tag | 角色 |
-|-------|--------|----------|------|
-| [opc-os](../opc-os/SKILL.md) | meta | leadership | 編排器、PLAN MODE、Ticket 路由 |
-| [opc-product-thinking](../opc-product-thinking/SKILL.md) | 1 | leadership | MVP、定價、驗證 |
-| [opc-build-engine](../opc-build-engine/SKILL.md) | 2 | engineering | 工程總線 |
-| [opc-build-frontend](../opc-build-frontend/SKILL.md) | 2 | engineering | UI、元件、無障礙 |
-| [opc-build-backend-api](../opc-build-backend-api/SKILL.md) | 2 | engineering | API、資料庫、驗證 |
-| [opc-build-qa](../opc-build-qa/SKILL.md) | 2 | engineering | 測試、驗收 |
-| [opc-build-security](../opc-build-security/SKILL.md) | 2 | engineering | OWASP 快速閘門 |
-| [opc-growth-engine](../opc-growth-engine/SKILL.md) | 3 | marketing | SEO、轉換、獲客 |
-| [opc-ux-design](../opc-ux-design/SKILL.md) | 4 | marketing | UX 流程、設計系統 |
-| [opc-analytics](../opc-analytics/SKILL.md) | 5 | leadership | 事件、漏斗、A/B |
-| [opc-automation](../opc-automation/SKILL.md) | 6 | engineering | 工作流、代理、cron |
-| [opc-content-engine](../opc-content-engine/SKILL.md) | 7 | marketing | Build-in-public、社群 |
-| [opc-founder-os](../opc-founder-os/SKILL.md) | 8 | leadership | 週計畫、專注 |
-
-## 參考文件
-
-- [SKILL-GRAPH.md](../reference/SKILL-GRAPH.md) — 領域觸發鏈
-- [parallel-review-protocol.md](../reference/parallel-review-protocol.md) — 非阻擋式協作規則
-- [skill.schema.json](../reference/skill.schema.json) — skill 中繼資料 schema
-- [examples/TICKET-EXAMPLE.md](../examples/TICKET-EXAMPLE.md) — 通用 Ticket 範例
-
-## 安裝（全域）
-
-將每個 `opc-*` skill 資料夾複製到 `~/.cursor/skills/`：
-
-```bash
-./install.sh
+```mermaid
+graph TD
+    A[User Prompt] --> B[@opc-os]
+    B --> C[PLAN MODE]
+    C --> D[Ticket]
+    D --> E[Skill Router]
+    E --> F1[Product]
+    E --> F2[Frontend]
+    E --> F3[Backend]
+    E --> F4[QA]
+    E --> F5[Security]
+    E --> F6[Growth]
+    E --> F7[Content]
+    E --> F8[Founder]
+    F1 & F2 & F3 & F4 & F5 & F6 & F7 & F8 --> G[Parallel Advisory]
+    G --> H[Decision + Next Action]
 ```
 
-```powershell
-.\install.ps1
-```
+架構詳解：[docs/architecture.md](architecture.md)
 
-兩支腳本皆可重複執行（會覆寫既有 `opc-*` skills）。
+## 實際示範（文字版）
 
-## 產品預設
+**輸入：** `@opc-os Build a job tracker for international students.`
 
-| 情境 | 預設領域 |
-|------|----------|
-| 新 Web app / SaaS | `opc-build-*` + `opc-ux-design` + `opc-growth-engine` |
-| 內容 / 社群 | `opc-content-engine` + `opc-growth-engine` |
-| 新產品點子 | 透過 `opc-os` 走完整鏈 |
+**輸出（摘要）：** Ticket（feature · 2 weeks solo）→ 平行顧問（product / frontend / growth）→ Decision（next_action: scaffold data model）
 
-專案專屬品牌 token 請引用你自己的 `BRAND.md` / `DESIGN-TOKENS.md`，或在工作區建立本地 preset 覆蓋層（此 repo 不包含）。
+完整範例：[examples/TICKET-EXAMPLE.md](../examples/TICKET-EXAMPLE.md)
 
-## 設計原則
+## 適用對象
 
-- **領域優於部門** — engineering / marketing 是標籤，不是組織層級。
-- **顧問而非阻擋** — 只有 `CRITICAL` 嚴重度會擋下出貨。
-- **一人執行** — 預設 MVP 範圍 ≤ 2 週。
-- **漸進揭露** — 子 skill 使用 `disable-model-invocation: true`；透過 `@opc-os` 或明確 `@` 載入。
+| 對象 | OPC 能幫你 |
+|------|-----------|
+| **Indie hacker** | 收斂 MVP、垂直切片出貨 |
+| **創業者** | 一個提示 → 產品 + 成長 + 內容計畫 |
+| **學生** | 把專題做成可展示的作品 |
+| **接案方** | 可重複的 Cursor 交付流程 |
+| **PM** | PRD-lite、跨領域審查，不需真人團隊 |
+
+## 文件
+
+| 文件 | 說明 |
+|------|------|
+| [architecture.md](architecture.md) | 系統架構 |
+| [routing.md](routing.md) | Skill 路由 |
+| [create-skill.md](create-skill.md) | 新增 Skill |
+| [compatibility.md](compatibility.md) | 相容性 |
+| [CONTRIBUTING.md](../CONTRIBUTING.md) | 貢獻指南 |
+
+## 相容性
+
+Cursor v0.40+ · macOS / Linux（`install.sh`）· Windows（`install.ps1`）
+
+詳見 [compatibility.md](compatibility.md)
 
 ## 授權
 
@@ -88,4 +111,4 @@
 
 ---
 
-Translation of README.md at v1.0.3
+Translation of README.md at v1.1.0
