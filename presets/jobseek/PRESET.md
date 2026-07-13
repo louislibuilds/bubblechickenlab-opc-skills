@@ -58,8 +58,21 @@ Align landing / nav / forms — **not** resume PDF output or tracker data tables
 | `--color-text` | `#2a2a28` |
 | `--color-accent-teal` | `#2d5a62` (primary CTA) |
 | `--color-accent-gold` | `#c9a962` (links, labels) |
-| `--font-display` | Cormorant Garamond, Noto Serif TC |
-| `--font-body` / `--font-ui` | DM Sans, Noto Sans TC |
+| `--font-display` | `"Cormorant Garamond", "Noto Serif TC", serif` |
+| `--font-body` / `--font-ui` | `"DM Sans", "Noto Sans TC", sans-serif` |
+
+### Typography (日系文青)
+
+JobSeek line targets zh-TW / ja audiences. Stacks use **paired Latin + CJK** — see [typography.md](../../reference/typography.md).
+
+| Role | Stack | Vibe |
+|------|-------|------|
+| Display (KATA, nagi) | Cormorant Garamond + Noto Serif TC | 日系文青 — craft, depth |
+| Body / UI | DM Sans + Noto Sans TC | Clean readable UI |
+
+Weights: 400 body, 500 labels, 600 subheads, 700 headings. Line height: 1.6 body, 1.25 headings.
+
+Do **not** use Latin-only fonts (Inter, Sora alone) without explicit CJK pairing.
 
 ## Stack Defaults
 

@@ -11,6 +11,12 @@ Track new and reused skills per product initiative.
 - Notes: ...
 ```
 
+## 2026-07-13 — v1.0.2 Latin + CJK typography
+
+- **Added:** `reference/typography.md` — font pairing guide for bilingual shells
+- **Updated:** opc-ux-design, opc-build-frontend, presets/jobseek, README reference
+- **Notes:** Latin-only stacks must pair with explicit CJK faces
+
 ## 2026-07-13 — v1.0.1 i18n README
 
 - **Added:** Phase 1 README translations (zh-TW, zh-CN, ja)
