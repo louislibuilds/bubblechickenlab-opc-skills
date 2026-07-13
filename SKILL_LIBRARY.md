@@ -11,6 +11,12 @@ Track new and reused skills per product initiative.
 - Notes: ...
 ```
 
+## 2026-07-13 — v1.1.3 architecture diagram as image
+
+- **Added:** `docs/assets/opc-architecture.png` — generated AWS-style layered diagram
+- **Replaced:** mermaid block with static image in all 4 README locales
+- **Notes:** Image renders consistently everywhere (no mermaid parser dependency)
+
 ## 2026-07-13 — v1.1.2 AWS-style architecture diagram
 
 - **Updated:** README How It Works — 4-layer subgraph diagram with AWS-inspired colors
