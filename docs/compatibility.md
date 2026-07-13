@@ -29,7 +29,7 @@ cd bubblechickenlab-opc-skills && ./install.sh
 curl -fsSL https://raw.githubusercontent.com/louislibuilds/bubblechickenlab-opc-skills/main/install.sh | bash
 ```
 
-Re-run install scripts safely — they overwrite existing `opc-*` skills only.
+Re-run install scripts safely — they recursively find all `opc-*` folders and flatten to `~/.cursor/skills/`.
 
 ## Not Yet Supported
 

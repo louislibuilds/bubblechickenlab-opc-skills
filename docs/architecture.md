@@ -87,13 +87,22 @@ LLM instruction fidelity is highest in English. README translations serve humans
 
 ## Install Target
 
-Skills install to `~/.cursor/skills/opc-*` for global `@` access across all projects.
+Skills install to `~/.cursor/skills/opc-*` for global `@` access. The installer recursively finds `opc-*` under repo root and `skills/*`, then **flattens** — Cursor only cares about skill folder name, not repo nesting.
 
-## Extension Points
+## Repo Layout
+
+```
+opc-os/                    # orchestrator (root)
+skills/
+  leadership/              # 3 skills
+  engineering/             # 6 skills
+  marketing/               # 3 skills
+reference/
+```
 
 | Extension | How |
 |-----------|-----|
-| New domain skill | Add `opc-{name}/SKILL.md` + schema entry |
+| New domain skill | Add `skills/{dept}/opc-{name}/SKILL.md` + schema entry |
 | Local product preset | `presets/*/PRESET.md` in your workspace (not in repo) |
 | Brand tokens | Project `BRAND.md` + `DESIGN-TOKENS.md` |
 | Reference guides | `reference/*.md` shared across skills |

@@ -100,7 +100,7 @@ Full chains: [SKILL-GRAPH.md](../reference/SKILL-GRAPH.md).
 | Content / social | opc-content-engine + opc-growth-engine |
 | New product idea | opc-product-thinking → full chain |
 
-Optional overlays live in a local `presets/` folder in your workspace (not shipped with this repo). Reference project `BRAND.md` / `DESIGN-TOKENS.md` when present.
+Optional overlays live in a local `presets/` folder in your workspace (not shipped with this repo). Domain skills live under `skills/{leadership,engineering,marketing}/`. Reference project `BRAND.md` / `DESIGN-TOKENS.md` when present.
 
 ## Output Format
 

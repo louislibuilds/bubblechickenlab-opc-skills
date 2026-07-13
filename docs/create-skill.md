@@ -5,12 +5,12 @@ Guide for authoring a new OPC domain skill.
 ## File Structure
 
 ```
-opc-my-domain/
+skills/{leadership|engineering|marketing}/opc-my-domain/
   SKILL.md          # required — agent instructions
-  reference/        # optional — deep docs loaded on demand
+  reference/        # optional — deep docs
 ```
 
-Install copies the whole folder to `~/.cursor/skills/opc-my-domain/`.
+`opc-os/` stays at repo root. Install flattens all `opc-*` to `~/.cursor/skills/`.
 
 ## SKILL.md Template
 

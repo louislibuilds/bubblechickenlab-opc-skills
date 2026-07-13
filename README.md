@@ -2,7 +2,7 @@
 
 **Languages:** English | [繁體中文](docs/README.zh-TW.md) | [简体中文](docs/README.zh-CN.md) | [日本語](docs/README.ja.md)
 
-[![Version](https://img.shields.io/badge/version-v1.1.3-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
+[![Version](https://img.shields.io/badge/version-v1.2.0-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Skills](https://img.shields.io/badge/skills-14-green.svg)](reference/skill.schema.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Skills-purple.svg)](https://cursor.com/docs/context/skills)
@@ -11,18 +11,7 @@
 
 **OPC Skill OS** turns [Cursor](https://cursor.com) into your AI co-founder team — not another prompt collection.
 
-| Role | Skill |
-|------|-------|
-| Product Manager | `opc-product-thinking` |
-| Frontend Engineer | `opc-build-frontend` |
-| Backend Engineer | `opc-build-backend-api` |
-| QA Engineer | `opc-build-qa` |
-| Security Reviewer | `opc-build-security` |
-| Growth Marketer | `opc-growth-engine` |
-| Content Strategist | `opc-content-engine` |
-| Founder Coach | `opc-founder-os` |
-
-**From idea → MVP → launch.** One prompt becomes a Ticket, routes to the right domains, and ships with a clear next action.
+**From idea → MVP → launch.** Type `@opc-os` + your goal. One prompt becomes a Ticket, routes to the right skills, and ships with a clear next action.
 
 ### Why not plain prompts?
 
@@ -37,135 +26,101 @@
 ## Quick Start
 
 ```bash
-# Option A — clone and install
 git clone https://github.com/louislibuilds/bubblechickenlab-opc-skills.git
 cd bubblechickenlab-opc-skills && ./install.sh    # macOS / Linux
-# cd bubblechickenlab-opc-skills; .\install.ps1   # Windows
-
-# Option B — one-liner (macOS / Linux)
-curl -fsSL https://raw.githubusercontent.com/louislibuilds/bubblechickenlab-opc-skills/main/install.sh | bash
+# .\install.ps1                                   # Windows
 ```
 
 ```
-# Open any project in Cursor, then:
 @opc-os Build a job tracker for international students. MVP in 2 weeks.
 ```
 
-`@opc-os` runs PLAN MODE → creates a Ticket → routes domains → outputs your next action.
+## Your AI Team (14 skills · 3 groups)
+
+Entry point: [`opc-os`](opc-os/SKILL.md) — orchestrator at repo root. Domain skills live under [`skills/`](skills/README.md).
+
+### Leadership — strategy & focus
+
+| Skill | Role |
+|-------|------|
+| [`opc-product-thinking`](skills/leadership/opc-product-thinking/SKILL.md) | MVP, pricing, validation |
+| [`opc-founder-os`](skills/leadership/opc-founder-os/SKILL.md) | Weekly planning, focus |
+| [`opc-analytics`](skills/leadership/opc-analytics/SKILL.md) | Metrics, funnels, AARRR |
+
+### Engineering — build & ship
+
+| Skill | Role |
+|-------|------|
+| [`opc-build-engine`](skills/engineering/opc-build-engine/SKILL.md) | Engineering bus |
+| [`opc-build-frontend`](skills/engineering/opc-build-frontend/SKILL.md) | UI, components, a11y |
+| [`opc-build-backend-api`](skills/engineering/opc-build-backend-api/SKILL.md) | API, DB, auth |
+| [`opc-build-qa`](skills/engineering/opc-build-qa/SKILL.md) | Tests, acceptance |
+| [`opc-build-security`](skills/engineering/opc-build-security/SKILL.md) | OWASP quick gate |
+| [`opc-automation`](skills/engineering/opc-automation/SKILL.md) | Workflows, agents, cron |
+
+### Marketing — grow & brand
+
+| Skill | Role |
+|-------|------|
+| [`opc-growth-engine`](skills/marketing/opc-growth-engine/SKILL.md) | SEO, conversion, acquisition |
+| [`opc-ux-design`](skills/marketing/opc-ux-design/SKILL.md) | UX flows, design system |
+| [`opc-content-engine`](skills/marketing/opc-content-engine/SKILL.md) | Build-in-public, social |
 
 ## How It Works
 
 Layered architecture — four stages from **prompt** to **shippable next action**:
 
-![OPC Skill OS architecture — Input, Orchestration, Domain Advisory, Output layers](docs/assets/opc-architecture.png)
+![OPC Skill OS architecture](docs/assets/opc-architecture.png)
 
 | Layer | What happens |
 |-------|----------------|
 | **① Input** | You type a goal in Cursor — one sentence is enough |
 | **② Orchestration** | `opc-os` scopes the MVP, opens a Ticket, picks skills |
-| **③ Domain Advisory** | Relevant domains review in **parallel** (max 3 bullets each) |
+| **③ Domain Advisory** | Leadership / Engineering / Marketing review in **parallel** |
 | **④ Output** | One merged decision — what ships now, what's deferred, **next action** |
 
-Full architecture: [docs/architecture.md](docs/architecture.md) · Skill chains: [reference/SKILL-GRAPH.md](reference/SKILL-GRAPH.md)
+[docs/architecture.md](docs/architecture.md) · [reference/SKILL-GRAPH.md](reference/SKILL-GRAPH.md)
 
 ## Live Demo (text)
 
-**Input:**
+**Input:** `@opc-os Build a job tracker for international students.`
 
-```
-@opc-os Build a job tracker for international students.
-```
-
-**Output (abbreviated):**
-
-```markdown
-## Ticket
-- id: T-20260713-042
-- type: feature
-- goal: Job application tracker for international students
-- domains_invoked: [opc-product-thinking, opc-build-engine, opc-build-frontend,
-  opc-build-backend-api, opc-growth-engine]
-- mvp_scope: 2 weeks solo
-- blockers: none
-
-## Parallel Advisory
-### opc-product-thinking
-- [SUGGESTION] MVP: add job + status + deadline only; defer cover letter AI
-### opc-build-frontend
-- [SUGGESTION] Table view + kanban toggle; mobile-first
-### opc-growth-engine
-- [SUGGESTION] Landing headline: "Track every application. Miss nothing."
-
-## Decision
-- ship_path: Local-first CRUD → export CSV → landing page
-- next_action: Scaffold data model (Job: company, role, status, deadline)
-```
+**Output (abbreviated):** Ticket → parallel advisory (product / frontend / growth) → `next_action: Scaffold data model`
 
 Full walkthrough: [examples/TICKET-EXAMPLE.md](examples/TICKET-EXAMPLE.md)
-
-> **Video / GIF demo** — coming soon. Star the repo to get notified when we add a screen recording.
 
 ## Use Cases
 
 | Audience | What OPC helps you do |
 |----------|----------------------|
-| **Indie hackers** | Scope MVPs, ship vertical slices, avoid over-engineering |
-| **Startup founders** | One prompt → product + growth + content plan |
-| **Students** | Turn class projects into shippable portfolios |
-| **Agencies** | Repeatable client delivery workflow in Cursor |
-| **PMs** | PRD-lite, ticket breakdown, cross-domain review without a team |
-
-## Skill Directory
-
-| Skill | Domain | Role |
-|-------|--------|------|
-| [opc-os](opc-os/SKILL.md) | meta | Orchestrator, PLAN MODE, Ticket routing |
-| [opc-product-thinking](opc-product-thinking/SKILL.md) | 1 | MVP, pricing, validation |
-| [opc-build-engine](opc-build-engine/SKILL.md) | 2 | Engineering bus |
-| [opc-build-frontend](opc-build-frontend/SKILL.md) | 2 | UI, components, a11y |
-| [opc-build-backend-api](opc-build-backend-api/SKILL.md) | 2 | API, DB, auth |
-| [opc-build-qa](opc-build-qa/SKILL.md) | 2 | Tests, acceptance |
-| [opc-build-security](opc-build-security/SKILL.md) | 2 | OWASP quick gate |
-| [opc-growth-engine](opc-growth-engine/SKILL.md) | 3 | SEO, conversion, acquisition |
-| [opc-ux-design](opc-ux-design/SKILL.md) | 4 | UX flows, design system |
-| [opc-analytics](opc-analytics/SKILL.md) | 5 | Events, funnels, AARRR |
-| [opc-automation](opc-automation/SKILL.md) | 6 | Workflows, agents, cron |
-| [opc-content-engine](opc-content-engine/SKILL.md) | 7 | Build-in-public, social |
-| [opc-founder-os](opc-founder-os/SKILL.md) | 8 | Weekly planning, focus |
+| **Indie hackers** | Scope MVPs, ship vertical slices |
+| **Startup founders** | One prompt → product + growth plan |
+| **Students** | Turn projects into shippable portfolios |
+| **Agencies** | Repeatable Cursor delivery workflow |
+| **PMs** | PRD-lite, cross-domain review without a team |
 
 ## Documentation
 
 | Doc | Description |
 |-----|-------------|
-| [docs/architecture.md](docs/architecture.md) | System design overview |
+| [skills/README.md](skills/README.md) | Skill directory by group |
+| [docs/architecture.md](docs/architecture.md) | System design |
 | [docs/routing.md](docs/routing.md) | How skills get invoked |
 | [docs/create-skill.md](docs/create-skill.md) | Author a new skill |
-| [docs/compatibility.md](docs/compatibility.md) | Cursor & OS support |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | PR guidelines |
-| [reference/typography.md](reference/typography.md) | Latin + CJK font pairing |
-| [reference/parallel-review-protocol.md](reference/parallel-review-protocol.md) | Advisory rules |
 
 ## Compatibility
 
-| | Supported |
-|---|-----------|
-| Cursor | v0.40+ (Skills / `@` mentions) |
-| macOS | ✅ `install.sh` |
-| Linux | ✅ `install.sh` |
-| Windows | ✅ `install.ps1` |
+Cursor v0.40+ · macOS / Linux (`install.sh`) · Windows (`install.ps1`) — [details](docs/compatibility.md)
 
-Details: [docs/compatibility.md](docs/compatibility.md)
+Install flattens `skills/*` and `opc-os` into `~/.cursor/skills/opc-*` for global `@` access.
 
 ## Design Principles
 
-- **Domains over departments** — engineering/marketing are tags, not org layers
-- **Advisory, not blocking** — only `CRITICAL` severity stops ship
-- **Solo execution** — default MVP scope ≤ 2 weeks
+- **Domains over departments** — groups organize skills; routing stays cross-cutting
+- **Advisory, not blocking** — only `CRITICAL` stops ship
+- **Solo execution** — default MVP ≤ 2 weeks
 - **Progressive disclosure** — sub-skills load via `@opc-os` or explicit `@`
-
-## Contributing
-
-We welcome skill contributions, docs improvements, and bug reports. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
@@ -173,4 +128,4 @@ We welcome skill contributions, docs improvements, and bug reports. See [CONTRIB
 
 ---
 
-Version v1.1.3
+Version v1.2.0

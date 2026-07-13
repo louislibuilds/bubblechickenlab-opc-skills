@@ -51,7 +51,7 @@ Header: sticky, 64px, backdrop blur, thin border. Primary CTA: teal fill, ~10px 
 
 ## Font Implementation
 
-Latin-only `font-family` values break on CJK content — always pair. Full guide: [typography.md](../reference/typography.md).
+Latin-only `font-family` values break on CJK content — always pair. Full guide: [typography.md](../../../reference/typography.md).
 
 ### CSS variables
 

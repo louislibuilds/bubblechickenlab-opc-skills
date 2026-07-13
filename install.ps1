@@ -4,8 +4,9 @@
   Install OPC skills to ~/.cursor/skills for global Cursor access.
 
 .DESCRIPTION
-  Copies each opc-* skill directory from this repo into the user's
-  Cursor skills folder. Safe to re-run (overwrites existing opc-* skills).
+  Recursively finds opc-* skill directories under repo root and skills/*,
+  then flattens them into ~/.cursor/skills/opc-*.
+  Safe to re-run (overwrites existing opc-* skills).
 
 .EXAMPLE
   .\install.ps1
@@ -23,7 +24,7 @@ if (-not (Test-Path $SourceRoot)) {
     Write-Error "Source not found: $SourceRoot"
 }
 
-$skillDirs = Get-ChildItem -Path $SourceRoot -Directory |
+$skillDirs = Get-ChildItem -Path $SourceRoot -Directory -Recurse |
     Where-Object { $_.Name -like 'opc-*' }
 
 if ($skillDirs.Count -eq 0) {
@@ -43,7 +44,7 @@ Write-Host ""
 foreach ($dir in $skillDirs) {
     $target = Join-Path $DestRoot $dir.Name
     if ($WhatIf) {
-        Write-Host "[WhatIf] Would copy $($dir.Name) -> $target"
+        Write-Host "[WhatIf] Would copy $($dir.FullName) -> $target"
     }
     else {
         Copy-Item -Path $dir.FullName -Destination $target -Recurse -Force

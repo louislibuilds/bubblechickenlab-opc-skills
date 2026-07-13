@@ -39,7 +39,7 @@ Use when project has no tokens yet. Override with project `DESIGN-TOKENS.md` whe
 | `--font-body` / `--font-ui` | `"DM Sans", "Noto Sans TC", sans-serif` |
 | `--font-mono` | `"JetBrains Mono", "Noto Sans Mono CJK TC", monospace` |
 
-**Typography rule:** Latin-only fonts (Inter, Sora, DM Sans, etc.) have no CJK glyphs. Always pair Latin + CJK in the same stack — see [typography.md](../reference/typography.md).
+**Typography rule:** Latin-only fonts (Inter, Sora, DM Sans, etc.) have no CJK glyphs. Always pair Latin + CJK in the same stack — see [typography.md](../../../reference/typography.md).
 
 ### Components
 
@@ -58,7 +58,7 @@ When content includes zh-TW, zh-CN, ja, or ko:
 3. **Define a full font system** in `DESIGN-TOKENS.md`: display, body, ui, mono, weights (400/500/600/700), heading scale, line heights.
 4. **Match product type** — SaaS → Plus Jakarta + Noto Sans TC; AI → Sora + Noto Sans TC; dev tool → Space Grotesk + Noto Sans TC + JetBrains Mono.
 
-Full pairings and audit checklist: [typography.md](../reference/typography.md).
+Full pairings and audit checklist: [typography.md](../../../reference/typography.md).
 
 ## Onboarding UX (solo products)
 
@@ -95,4 +95,4 @@ Full pairings and audit checklist: [typography.md](../reference/typography.md).
 - Unify shell across related products; don't force internal tool UIs to identical layouts
 - Respect existing localStorage keys during rebrand migrations
 - Prefer token CSS variables over one-off hex
-- Typography details → [typography.md](../reference/typography.md)
+- Typography details → [typography.md](../../../reference/typography.md)

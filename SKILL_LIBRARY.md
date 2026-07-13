@@ -11,6 +11,13 @@ Track new and reused skills per product initiative.
 - Notes: ...
 ```
 
+## 2026-07-13 — v1.2.0 skills directory restructure
+
+- **Moved:** 13 domain skills into `skills/{leadership,engineering,marketing}/`
+- **Kept:** `opc-os/` at repo root (orchestrator entry)
+- **Updated:** README 3-group layout, install.sh/ps1 recursive flatten, skills/README.md
+- **Notes:** `@opc-*` names unchanged; install still flattens to `~/.cursor/skills/`
+
 ## 2026-07-13 — v1.1.3 architecture diagram as image
 
 - **Added:** `docs/assets/opc-architecture.png` — generated AWS-style layered diagram

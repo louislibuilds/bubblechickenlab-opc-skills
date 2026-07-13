@@ -18,20 +18,26 @@ Thank you for helping build the solo founder AI operating system for Cursor.
 2. Read [docs/create-skill.md](docs/create-skill.md) — skill format and naming
 3. Check [reference/skill.schema.json](reference/skill.schema.json) — avoid duplicate triggers
 
-## Skill Naming Convention
+## File Structure
 
 ```
-opc-{domain}           # top-level domain (opc-growth-engine)
-opc-build-{subskill}   # engineering sub-skills (opc-build-frontend)
-opc-os                 # orchestrator only
+opc-os/                          # orchestrator — repo root
+skills/
+  leadership/opc-product-thinking/
+  engineering/opc-build-frontend/
+  marketing/opc-growth-engine/
+reference/                       # shared specs
 ```
+
+New skills go under `skills/{leadership|engineering|marketing}/opc-{name}/`.
 
 Rules:
 
-- Lowercase, hyphen-separated
-- Prefix always `opc-`
+- Lowercase, hyphen-separated; prefix always `opc-`
+- Place under `skills/leadership/`, `skills/engineering/`, or `skills/marketing/`
+- `opc-os` is the only skill at repo root
 - Description in YAML frontmatter must include **when to use** triggers
-- Sub-skills under `opc-build-engine` should set `disable-model-invocation: true`
+- Engineering sub-skills set `disable-model-invocation: true`
 
 ## Pull Request Process
 
