@@ -1,0 +1,32 @@
+# OPC Skill Library Changelog
+
+Track new and reused skills per product initiative.
+
+## Format
+
+```
+### YYYY-MM-DD — {initiative}
+- Reused: opc-build-frontend, opc-growth-engine
+- Added: (none)
+- Notes: ...
+```
+
+## 2026-07-13 — v1.0.0 public release
+
+- **Added:** JobSeek preset extracted to `presets/jobseek/`
+- **Reused:** All 14 core skills
+- **Notes:** Core skills decoupled from JobSeek workspace; generic ticket example added
+
+## 2026-07-03 — OPC Skill OS bootstrap
+
+- **Added:** Full 14-skill library (opc-os + 8 domains + 4 build sub-skills)
+- **Reused:** N/A (initial registry)
+- **Notes:** Reference implementation validated on solo product line
+
+## Reuse Guidelines
+
+Before creating a new skill:
+
+1. Check [skill.schema.json](reference/skill.schema.json) for existing triggers
+2. Extend an existing skill's checklist if overlap > 50%
+3. Log reuse here when opc-os reports SKILL LIBRARY UPDATE

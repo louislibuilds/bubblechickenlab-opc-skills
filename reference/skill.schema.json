@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OPC Skill Registry",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "opc-os",
+      "domain": "meta",
+      "dept_tag": "leadership",
+      "complexity": "orchestrator",
+      "inputs": ["user_prompt", "project_context"],
+      "outputs": ["ticket_brief", "plan_summary", "next_action"],
+      "triggers": ["@opc-os", "one-person company", "OPC", "new project", "ship"],
+      "dependencies": [],
+      "blocks_on_critical": false
+    },
+    {
+      "name": "opc-product-thinking",
+      "domain": "product_thinking",
+      "dept_tag": "leadership",
+      "complexity": "medium",
+      "inputs": ["idea", "market_context"],
+      "outputs": ["mvp_scope", "pricing_hypothesis", "persona"],
+      "triggers": ["idea", "MVP", "pricing", "validate", "PRD"],
+      "dependencies": [],
+      "blocks_on_critical": false
+    },
+    {
+      "name": "opc-build-engine",
+      "domain": "build_engine",
+      "dept_tag": "engineering",
+      "complexity": "high",
+      "inputs": ["spec", "architecture_decisions"],
+      "outputs": ["implementation_plan", "sub_skill_routing"],
+      "triggers": ["build", "implement", "code", "feature", "bug"],
+      "dependencies": ["opc-product-thinking"],
+      "blocks_on_critical": false
+    },
+    {
+      "name": "opc-build-frontend",
+      "domain": "build_engine",
+      "dept_tag": "engineering",
+      "complexity": "medium",
+      "inputs": ["ui_spec", "design_tokens"],
+      "outputs": ["component_plan", "frontend_advisory"],
+      "triggers": ["UI", "React", "frontend", "component", "landing", "CSS", "a11y"],
+      "dependencies": ["opc-build-engine"],
+      "blocks_on_critical": false
+    },
+    {
+      "name": "opc-build-backend-api",
+      "domain": "build_engine",
+      "dept_tag": "engineering",
+      "complexity": "medium",
+      "inputs": ["api_contract", "data_model"],
+      "outputs": ["api_design", "backend_advisory"],
+      "triggers": ["API", "backend", "database", "auth", "Stripe", "endpoint"],
+      "dependencies": ["opc-build-engine"],
+      "blocks_on_critical": false
+    },
+    {
+      "name": "opc-build-qa",
+      "domain": "build_engine",
+      "dept_tag": "engineering",
+      "complexity": "low",
+      "inputs": ["acceptance_criteria", "changed_behavior"],
+      "outputs": ["test_plan", "qa_advisory"],
+      "triggers": ["test", "QA", "TDD", "acceptance", "regression"],
+      "dependencies": ["opc-build-engine"],
+      "blocks_on_critical": false
+    },
+    {
+      "name": "opc-build-security",
+      "domain": "build_engine",
+      "dept_tag": "engineering",
+      "complexity": "medium",
+      "inputs": ["code_changes", "deployment_surface"],
+      "outputs": ["security_advisory", "critical_findings"],
+      "triggers": ["security", "OWASP", "secrets", "auth", "XSS", "SQLi"],
+      "dependencies": ["opc-build-engine"],
+      "blocks_on_critical": true
+    },
+    {
+      "name": "opc-growth-engine",
+      "domain": "growth_engine",
+      "dept_tag": "marketing",
+      "complexity": "medium",
+      "inputs": ["product_positioning", "landing_url"],
+      "outputs": ["growth_plan", "seo_checklist", "conversion_advisory"],
+      "triggers": ["SEO", "growth", "conversion", "acquisition", "referral", "pricing page"],
+      "dependencies": ["opc-product-thinking"],
+      "blocks_on_critical": false
+    },
+    {
+      "name": "opc-ux-design",
+      "domain": "ux_design",
+      "dept_tag": "marketing",
+      "complexity": "medium",
+      "inputs": ["brand_guidelines", "user_flow"],
+      "outputs": ["ux_advisory", "token_alignment"],
+      "triggers": ["UX", "onboarding", "design system", "brand", "visual"],
+      "dependencies": [],
+      "blocks_on_critical": true
+    },
+    {
+      "name": "opc-analytics",
+      "domain": "analytics",
+      "dept_tag": "leadership",
+      "complexity": "low",
+      "inputs": ["events_schema", "funnel_definition"],
+      "outputs": ["tracking_plan", "metrics_advisory"],
+      "triggers": ["analytics", "PostHog", "funnel", "retention", "A/B"],
+      "dependencies": ["opc-growth-engine"],
+      "blocks_on_critical": false
+    },
+    {
+      "name": "opc-automation",
+      "domain": "automation",
+      "dept_tag": "engineering",
+      "complexity": "medium",
+      "inputs": ["repetitive_workflow"],
+      "outputs": ["automation_design", "script_plan"],
+      "triggers": ["automate", "cron", "workflow", "agent", "CI"],
+      "dependencies": [],
+      "blocks_on_critical": false
+    },
+    {
+      "name": "opc-content-engine",
+      "domain": "content_engine",
+      "dept_tag": "marketing",
+      "complexity": "low",
+      "inputs": ["product_update", "brand_voice"],
+      "outputs": ["content_draft", "distribution_plan"],
+      "triggers": ["LinkedIn", "Twitter", "blog", "build-in-public", "post"],
+      "dependencies": ["opc-growth-engine"],
+      "blocks_on_critical": false
+    },
+    {
+      "name": "opc-founder-os",
+      "domain": "founder_os",
+      "dept_tag": "leadership",
+      "complexity": "low",
+      "inputs": ["backlog", "calendar"],
+      "outputs": ["weekly_plan", "priority_stack"],
+      "triggers": ["weekly", "prioritize", "focus", "burnout", "plan my week"],
+      "dependencies": [],
+      "blocks_on_critical": false
+    }
+  ]
+}
