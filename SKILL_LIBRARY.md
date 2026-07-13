@@ -11,6 +11,12 @@ Track new and reused skills per product initiative.
 - Notes: ...
 ```
 
+## 2026-07-13 — v1.1.2 AWS-style architecture diagram
+
+- **Updated:** README How It Works — 4-layer subgraph diagram with AWS-inspired colors
+- **Added:** Layer summary table below diagram (all 4 README locales)
+- **Notes:** Leadership / Engineering / Marketing skill groups; avoids @ in mermaid nodes
+
 ## 2026-07-13 — v1.1.1 fix mermaid render
 
 - **Fixed:** README mermaid diagram — quote node labels (`@`, `+`) and split `&` fan-in

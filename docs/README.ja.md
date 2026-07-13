@@ -2,7 +2,7 @@
 
 **言語：** [English](../README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md) | 日本語
 
-[![Version](https://img.shields.io/badge/version-v1.1.1-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
+[![Version](https://img.shields.io/badge/version-v1.1.2-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
 [![Skills](https://img.shields.io/badge/skills-14-green.svg)](../reference/skill.schema.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Skills-purple.svg)](https://cursor.com/docs/context/skills)
@@ -51,30 +51,87 @@ curl -fsSL https://raw.githubusercontent.com/louislibuilds/bubblechickenlab-opc-
 
 ## 仕組み
 
+レイヤーアーキテクチャ — **プロンプト**から**実行可能な次のアクション**まで、4 段階：
+
 ```mermaid
-graph TD
-    A["User Prompt"] --> B["@opc-os"]
-    B --> C["PLAN MODE"]
-    C --> D["Ticket"]
-    D --> E["Skill Router"]
-    E --> F1["Product"]
-    E --> F2["Frontend"]
-    E --> F3["Backend"]
-    E --> F4["QA"]
-    E --> F5["Security"]
-    E --> F6["Growth"]
-    E --> F7["Content"]
-    E --> F8["Founder"]
-    F1 --> G["Parallel Advisory"]
-    F2 --> G
-    F3 --> G
-    F4 --> G
-    F5 --> G
-    F6 --> G
-    F7 --> G
-    F8 --> G
-    G --> H["Decision + Next Action"]
+flowchart TB
+    subgraph L1["① INPUT LAYER"]
+        direction LR
+        user(["User Prompt"])
+        cursor(["Cursor IDE"])
+    end
+
+    subgraph L2["② ORCHESTRATION — opc-os"]
+        direction LR
+        plan["PLAN MODE"]
+        ticket["Ticket System"]
+        router["Skill Router"]
+        plan --> ticket --> router
+    end
+
+    subgraph L3["③ DOMAIN ADVISORY — 14 Skills · 3 Groups"]
+        direction TB
+        subgraph leadership["Leadership"]
+            direction LR
+            sk1["Product Thinking"]
+            sk2["Founder OS"]
+            sk3["Analytics"]
+        end
+        subgraph engineering["Engineering"]
+            direction LR
+            sk4["Build Engine"]
+            sk5["Frontend"]
+            sk6["Backend"]
+            sk7["QA"]
+            sk8["Security"]
+            sk9["Automation"]
+        end
+        subgraph marketing["Marketing"]
+            direction LR
+            sk10["Growth"]
+            sk11["UX Design"]
+            sk12["Content"]
+        end
+    end
+
+    subgraph L4["④ OUTPUT LAYER"]
+        direction LR
+        advisory["Parallel Advisory"]
+        decision["Decision"]
+        action["Next Action → Ship"]
+        advisory --> decision --> action
+    end
+
+    user --> cursor
+    cursor --> plan
+    router --> sk1
+    router --> sk4
+    router --> sk10
+    sk1 --> advisory
+    sk4 --> advisory
+    sk10 --> advisory
+
+    classDef cInput fill:#FF9900,stroke:#232F3E,color:#FFFFFF,stroke-width:2px
+    classDef cOrch fill:#232F3E,stroke:#FF9900,color:#FFFFFF,stroke-width:2px
+    classDef cLead fill:#527FFF,stroke:#232F3E,color:#FFFFFF
+    classDef cEng fill:#01A88D,stroke:#232F3E,color:#FFFFFF
+    classDef cMkt fill:#8C4FFF,stroke:#232F3E,color:#FFFFFF
+    classDef cOut fill:#1D8102,stroke:#232F3E,color:#FFFFFF,stroke-width:2px
+
+    class user,cursor cInput
+    class plan,ticket,router cOrch
+    class sk1,sk2,sk3 cLead
+    class sk4,sk5,sk6,sk7,sk8,sk9 cEng
+    class sk10,sk11,sk12 cMkt
+    class advisory,decision,action cOut
 ```
+
+| レイヤー | 内容 |
+|---------|------|
+| **① Input** | Cursor でゴールを入力 — 一文で OK |
+| **② Orchestration** | `opc-os` が MVP を定義し Ticket を作成、skills を選択 |
+| **③ Domain Advisory** | 関連ドメインが**並列**レビュー（各 3 点まで） |
+| **④ Output** | 統合された決定 — 今出すもの、延期、**次のアクション** |
 
 詳細：[docs/architecture.md](architecture.md)
 
@@ -118,4 +175,4 @@ Cursor v0.40+ · macOS / Linux · Windows
 
 ---
 
-Translation of README.md at v1.1.1
+Translation of README.md at v1.1.2
