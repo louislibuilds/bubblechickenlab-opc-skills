@@ -11,6 +11,12 @@ Track new and reused skills per product initiative.
 - Notes: ...
 ```
 
+## 2026-07-13 — v1.1.1 fix mermaid render
+
+- **Fixed:** README mermaid diagram — quote node labels (`@`, `+`) and split `&` fan-in
+- **Updated:** all four README variants (en, zh-TW, zh-CN, ja)
+- **Notes:** Repo name stays `bubblechickenlab-opc-skills` (studio brand); `OPC Skill OS` is the product/wake name
+
 ## 2026-07-13 — v1.1.0 open-source readiness
 
 - **Added:** README hero, mermaid diagrams, demo, use cases, comparison table

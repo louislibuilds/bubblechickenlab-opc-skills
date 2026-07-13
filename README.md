@@ -2,7 +2,7 @@
 
 **Languages:** English | [繁體中文](docs/README.zh-TW.md) | [简体中文](docs/README.zh-CN.md) | [日本語](docs/README.ja.md)
 
-[![Version](https://img.shields.io/badge/version-v1.1.0-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
+[![Version](https://img.shields.io/badge/version-v1.1.1-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Skills](https://img.shields.io/badge/skills-14-green.svg)](reference/skill.schema.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Skills-purple.svg)](https://cursor.com/docs/context/skills)
@@ -57,20 +57,27 @@ curl -fsSL https://raw.githubusercontent.com/louislibuilds/bubblechickenlab-opc-
 
 ```mermaid
 graph TD
-    A[User Prompt] --> B[@opc-os]
-    B --> C[PLAN MODE]
-    C --> D[Ticket]
-    D --> E[Skill Router]
-    E --> F1[Product]
-    E --> F2[Frontend]
-    E --> F3[Backend]
-    E --> F4[QA]
-    E --> F5[Security]
-    E --> F6[Growth]
-    E --> F7[Content]
-    E --> F8[Founder]
-    F1 & F2 & F3 & F4 & F5 & F6 & F7 & F8 --> G[Parallel Advisory]
-    G --> H[Decision + Next Action]
+    A["User Prompt"] --> B["@opc-os"]
+    B --> C["PLAN MODE"]
+    C --> D["Ticket"]
+    D --> E["Skill Router"]
+    E --> F1["Product"]
+    E --> F2["Frontend"]
+    E --> F3["Backend"]
+    E --> F4["QA"]
+    E --> F5["Security"]
+    E --> F6["Growth"]
+    E --> F7["Content"]
+    E --> F8["Founder"]
+    F1 --> G["Parallel Advisory"]
+    F2 --> G
+    F3 --> G
+    F4 --> G
+    F5 --> G
+    F6 --> G
+    F7 --> G
+    F8 --> G
+    G --> H["Decision + Next Action"]
 ```
 
 Full architecture: [docs/architecture.md](docs/architecture.md) · Skill chains: [reference/SKILL-GRAPH.md](reference/SKILL-GRAPH.md)
@@ -180,4 +187,4 @@ We welcome skill contributions, docs improvements, and bug reports. See [CONTRIB
 
 ---
 
-Version v1.1.0
+Version v1.1.1
