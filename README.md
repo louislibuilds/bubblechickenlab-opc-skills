@@ -2,6 +2,7 @@
 
 **Languages:** English | [繁體中文](docs/README.zh-TW.md) | [简体中文](docs/README.zh-CN.md) | [日本語](docs/README.ja.md)
 
+[![Version](https://img.shields.io/badge/version-v1.0.1-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Skills](https://img.shields.io/badge/skills-14-green.svg)](reference/skill.schema.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Skills-purple.svg)](https://cursor.com/docs/context/skills)
@@ -94,3 +95,7 @@ For project-specific brand tokens, add a preset under `presets/` or reference yo
 ## License
 
 [MIT](LICENSE) — Louis Li / Bubble Chicken Lab
+
+---
+
+Version v1.0.1
