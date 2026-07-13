@@ -11,6 +11,12 @@ Track new and reused skills per product initiative.
 - Notes: ...
 ```
 
+## 2026-07-13 — v1.0.1 i18n README
+
+- **Added:** Phase 1 README translations (zh-TW, zh-CN, ja)
+- **Reused:** All 14 core skills (English)
+- **Notes:** English README remains source of truth; sync translations on major changes only
+
 ## 2026-07-13 — v1.0.0 public release
 
 - **Added:** JobSeek preset extracted to `presets/jobseek/`
