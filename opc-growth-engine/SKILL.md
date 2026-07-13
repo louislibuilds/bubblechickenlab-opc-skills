@@ -47,7 +47,7 @@ Triggers: SEO, growth, conversion, acquisition, referral, landing page, pricing,
 
 ## Product Positioning
 
-Derive positioning from the Ticket goal and user context. If a preset exists (e.g. `presets/jobseek/PRESET.md`), use its product table and taglines.
+Derive positioning from the Ticket goal and user context. If a local preset exists in workspace `presets/*/PRESET.md`, use its product table and taglines.
 
 ## Advisory Format
 

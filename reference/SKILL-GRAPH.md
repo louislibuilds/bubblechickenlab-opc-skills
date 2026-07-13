@@ -70,7 +70,7 @@ opc-automation → opc-build-engine (implementation) → opc-build-qa
 
 ## Product Presets
 
-Generic defaults above. For project-specific chains, add a preset under `presets/` (see [presets/jobseek/](../presets/jobseek/) for an example).
+Generic defaults above. For project-specific chains, add a local preset under `presets/` in your workspace.
 
 ## Dependencies Rule
 

@@ -2,7 +2,7 @@
 
 **言語：** [English](../README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md) | 日本語
 
-[![Version](https://img.shields.io/badge/version-v1.0.2-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
+[![Version](https://img.shields.io/badge/version-v1.0.3-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
 [![Skills](https://img.shields.io/badge/skills-14-green.svg)](../reference/skill.schema.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Skills-purple.svg)](https://cursor.com/docs/context/skills)
@@ -51,16 +51,6 @@
 - [skill.schema.json](../reference/skill.schema.json) — skill メタデータ schema
 - [examples/TICKET-EXAMPLE.md](../examples/TICKET-EXAMPLE.md) — 汎用 Ticket ウォークスルー
 
-## Presets
-
-任意のプロダクトラインオーバーレイ。通常利用では不要。
-
-| Preset | 説明 |
-|--------|------|
-| [presets/jobseek/](../presets/jobseek/) | JOBO / KATA / nagi プロダクトライン（作者のワークスペース） |
-
-使い方：`@opc-os @presets/jobseek/PRESET.md <task>`
-
 ## インストール（グローバル）
 
 各 `opc-*` skill フォルダを `~/.cursor/skills/` にコピー：
@@ -83,7 +73,7 @@
 | コンテンツ / ソーシャル | `opc-content-engine` + `opc-growth-engine` |
 | 新規プロダクトアイデア | `opc-os` 経由でフルチェーン |
 
-プロジェクト固有のブランドトークンは `presets/` に追加するか、独自の `BRAND.md` / `DESIGN-TOKENS.md` を参照。
+プロジェクト固有のブランドトークンは、独自の `BRAND.md` / `DESIGN-TOKENS.md` を参照するか、ワークスペースにローカル preset オーバーレイを作成してください（この repo には含まれません）。
 
 ## 設計原則
 
@@ -98,4 +88,4 @@
 
 ---
 
-Translation of README.md at v1.0.2
+Translation of README.md at v1.0.3

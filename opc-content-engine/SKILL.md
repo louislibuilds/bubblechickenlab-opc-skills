@@ -50,7 +50,7 @@ One piece of work → max 2 derivatives per session (don't backlog content facto
 
 ## Product Hooks
 
-Derive angles from the Ticket goal and product positioning. If a preset exists (e.g. `presets/jobseek/PRESET.md`), use its content hooks and brand rules.
+Derive angles from the Ticket goal and product positioning. If a local preset exists in workspace `presets/*/PRESET.md`, use its content hooks and brand rules.
 
 ## Checklist
 

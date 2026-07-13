@@ -2,7 +2,7 @@
 
 **Languages:** English | [繁體中文](docs/README.zh-TW.md) | [简体中文](docs/README.zh-CN.md) | [日本語](docs/README.ja.md)
 
-[![Version](https://img.shields.io/badge/version-v1.0.2-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
+[![Version](https://img.shields.io/badge/version-v1.0.3-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Skills](https://img.shields.io/badge/skills-14-green.svg)](reference/skill.schema.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Skills-purple.svg)](https://cursor.com/docs/context/skills)
@@ -52,16 +52,6 @@ That's it — `@opc-os` runs PLAN MODE, routes domains, and outputs your next ac
 - [skill.schema.json](reference/skill.schema.json) — skill metadata schema
 - [examples/TICKET-EXAMPLE.md](examples/TICKET-EXAMPLE.md) — generic ticket walkthrough
 
-## Presets
-
-Optional product-line overlays. Not required for general use.
-
-| Preset | Description |
-|--------|-------------|
-| [presets/jobseek/](presets/jobseek/) | JOBO / KATA / nagi product line (author's workspace) |
-
-Usage: `@opc-os @presets/jobseek/PRESET.md <task>`
-
 ## Install (global)
 
 Copies each `opc-*` skill folder to `~/.cursor/skills/`:
@@ -84,7 +74,7 @@ Both scripts are safe to re-run (overwrites existing `opc-*` skills).
 | Content / social | `opc-content-engine` + `opc-growth-engine` |
 | New product idea | Full chain via `opc-os` |
 
-For project-specific brand tokens, add a preset under `presets/` or reference your own `BRAND.md` / `DESIGN-TOKENS.md`.
+For project-specific brand tokens, reference your own `BRAND.md` / `DESIGN-TOKENS.md`, or add a local preset overlay in your workspace (not shipped with this repo).
 
 ## Design Principles
 
@@ -99,4 +89,4 @@ For project-specific brand tokens, add a preset under `presets/` or reference yo
 
 ---
 
-Version v1.0.2
+Version v1.0.3

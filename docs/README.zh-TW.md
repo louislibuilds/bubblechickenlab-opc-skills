@@ -2,7 +2,7 @@
 
 **語言：** [English](../README.md) | 繁體中文 | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
-[![Version](https://img.shields.io/badge/version-v1.0.2-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
+[![Version](https://img.shields.io/badge/version-v1.0.3-orange.svg)](https://github.com/louislibuilds/bubblechickenlab-opc-skills/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
 [![Skills](https://img.shields.io/badge/skills-14-green.svg)](../reference/skill.schema.json)
 [![Cursor](https://img.shields.io/badge/Cursor-Skills-purple.svg)](https://cursor.com/docs/context/skills)
@@ -51,16 +51,6 @@
 - [skill.schema.json](../reference/skill.schema.json) — skill 中繼資料 schema
 - [examples/TICKET-EXAMPLE.md](../examples/TICKET-EXAMPLE.md) — 通用 Ticket 範例
 
-## Presets
-
-可選的產品線覆蓋層，一般使用不必載入。
-
-| Preset | 說明 |
-|--------|------|
-| [presets/jobseek/](../presets/jobseek/) | JOBO / KATA / nagi 產品線（作者工作區） |
-
-用法：`@opc-os @presets/jobseek/PRESET.md <task>`
-
 ## 安裝（全域）
 
 將每個 `opc-*` skill 資料夾複製到 `~/.cursor/skills/`：
@@ -83,7 +73,7 @@
 | 內容 / 社群 | `opc-content-engine` + `opc-growth-engine` |
 | 新產品點子 | 透過 `opc-os` 走完整鏈 |
 
-專案專屬品牌 token 可放在 `presets/`，或引用你自己的 `BRAND.md` / `DESIGN-TOKENS.md`。
+專案專屬品牌 token 請引用你自己的 `BRAND.md` / `DESIGN-TOKENS.md`，或在工作區建立本地 preset 覆蓋層（此 repo 不包含）。
 
 ## 設計原則
 
@@ -98,4 +88,4 @@
 
 ---
 
-Translation of README.md at v1.0.2
+Translation of README.md at v1.0.3

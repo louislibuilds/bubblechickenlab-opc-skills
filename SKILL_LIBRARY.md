@@ -11,6 +11,12 @@ Track new and reused skills per product initiative.
 - Notes: ...
 ```
 
+## 2026-07-13 — v1.0.3 remove public presets
+
+- **Removed:** `presets/jobseek/` and `examples/TICKET-EXAMPLE-jobseek.md` from repo (gitignored locally)
+- **Updated:** README, opc-os, skills — local preset guidance only
+- **Notes:** Font pairings remain in `reference/typography.md`; product-specific rules stay local
+
 ## 2026-07-13 — v1.0.2 Latin + CJK typography
 
 - **Added:** `reference/typography.md` — font pairing guide for bilingual shells
